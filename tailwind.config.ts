@@ -1,16 +1,14 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         grayscale: {
           110: "#212126",
           100: "#34343D",
@@ -39,6 +37,25 @@ const config: Config = {
           10: "#ADDAFF",
           "00": "#D6EDFF",
         },
+      },
+      fontFamily: {
+        pretendard: ["var(--font-pretendard)", ...defaultTheme.fontFamily.sans],
+        "paperlogy-heading": [
+          "Paperlogy-Bold",
+          ...defaultTheme.fontFamily.sans,
+        ],
+        "paperlogy-title": [
+          "Paperlogy-Medium",
+          ...defaultTheme.fontFamily.sans,
+        ],
+      },
+      fontSize: {
+        "3xl": ["24px", "150%"],
+        "2xl": ["22px", "150%"],
+        xl: ["20px", "150%"],
+        lg: ["18px", "150%"],
+        md: ["16px", "150%"],
+        sm: ["14px", "150%"],
       },
     },
   },

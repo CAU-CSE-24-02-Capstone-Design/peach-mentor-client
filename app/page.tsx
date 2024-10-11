@@ -1,9 +1,27 @@
+"use client";
+
 import React from 'react';
+import dynamic from 'next/dynamic';
+import SocialLoginButton from '../components/buttons/SocialLoginButton';
+
+const LottieAnimation = dynamic(() => import('../components/LottieAnimation'), { ssr: false });
 
 export default function Home() {
+  const handleLogin = (provider: string) => {
+    console.log(`${provider} 로그인`);
+  };
+
   return (
-    <div className="items-center justify-center">
-      <h1 className="text-center">복숭아멘토</h1>
+    <div className="w-[390px] h-screen flex flex-col items-center justify-center mx-auto bg-primary-50">
+      <h1 className="text-[40px] text-white font-paperlogy-heading mb-8">복숭아멘토</h1>
+      <div className="mb-8">
+        <LottieAnimation />
+      </div>
+      <div className="flex flex-col space-y-6">
+        <SocialLoginButton provider="카카오" onClick={() => handleLogin('카카오')} style={{ backgroundColor: '#FEE500' }} />
+        <SocialLoginButton provider="구글" onClick={() => handleLogin('구글')} style={{ backgroundColor: '#FFFFFF' }} />
+        <SocialLoginButton provider="네이버" onClick={() => handleLogin('네이버')} style={{ backgroundColor: '#2DB400' }} />
+      </div>
     </div>
   );
 }
