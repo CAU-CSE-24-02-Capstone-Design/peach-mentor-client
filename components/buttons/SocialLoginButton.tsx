@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 
@@ -8,10 +8,14 @@ interface SocialLoginButtonProps {
   style?: React.CSSProperties;
 }
 
-const SocialLoginButton: React.FC<SocialLoginButtonProps> = ({ provider, onClick, style }) => {
+const SocialLoginButton: React.FC<SocialLoginButtonProps> = ({
+  provider,
+  onClick,
+  style,
+}) => {
   return (
     <button
-      className="w-[300px] p-4 text-grayscale-110 rounded-lg hover:opacity-90 transition font-paperlogy-title"
+      className="w-[300px] rounded-lg p-4 font-paperlogy-title text-grayscale-110 transition hover:opacity-90"
       onClick={onClick}
       style={style}
     >
